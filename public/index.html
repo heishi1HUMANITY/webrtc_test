@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <script src="./js/bundle.js" defer></script>
   </head>
   <body>
-    <video id="videoPlayer" height="480" width="640" style="border: 1px solid black;"></video>
-    <button id="connect">connect</button>
-    <textarea id="receiveSdp" cols="30" rows="10"></textarea>
-    <button id="receiveRemoteSdp">receiveRemoteSdp</button>
-    <script src="./js/bundle.js"></script>
-    <textarea id="sendSdp" cols="30" rows="10"></textarea>
+    <div style="display: flex">
+      <div style="display: flex; flex-direction: column">
+        <label>my video</label>
+        <video
+          id="myVideo"
+          height="200"
+          width="300"
+          style="border: 1px solid black"
+        ></video>
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <label>received video</label>
+        <video
+          id="receivedVideo"
+          height="200"
+          width="300"
+          style="border: 1px solid black"
+        ></video>
+      </div>
+    </div>
+    <div>
+      <button id="connect">connect</button>
+    </div>
+    <div style="display: flex; flex-direction: column">
+      <label>SDP to send</label>
+      <textarea id="textForSendSdp" cols="30" rows="10"></textarea>
+    </div>
+    <div style="display: flex; flex-direction: column">
+      <label>SDP to receive</label>
+      <button id="receiveSdp">receive remote sdp</button>
+      <textarea id="textForSetSdp" cols="30" rows="10"></textarea>
+    </div>
   </body>
 </html>
